@@ -45,6 +45,39 @@ You grow them.
 13 personas across four work areas. Each is self-contained — fork, drop, or
 rewrite one without touching the others.
 
+### Engineering
+
+| Persona | Owns |
+|---|---|
+| [Software Developer](software-developer.md) | code, verification, deleting what isn't earning its place |
+| [Software Architect](software-architect.md) | boundaries, contracts, module design |
+
+### Infrastructure & Security
+
+| Persona | Owns |
+|---|---|
+| [Cloud Architect](cloud-architect.md) | infrastructure topology, cost, teardown |
+| [DevOps Engineer](devops-engineer.md) | pipelines, deploys, gates |
+| [Security Engineer](security-engineer.md) | secrets, auth, exposure discipline |
+
+### Product
+
+| Persona | Owns |
+|---|---|
+| [Product Manager](product-manager.md) | scope, sequencing, audience value |
+| [Product Designer](product-designer.md) | UX, interaction, design systems |
+| [Product Brainstormer](product-brainstormer.md) | idea generation, research, validation |
+
+### Content & Communication
+
+| Persona | Owns |
+|---|---|
+| [Content Writer](content-writer.md) | prose, titles, voice |
+| [Content Designer](content-designer.md) | covers, imagery, visual publishing |
+| [Graphic Designer](graphic-designer.md) | composition, grid, type, optical detail |
+| [Social Media Manager](social-media-manager.md) | distribution, platform mechanics |
+| [Educator](educator.md) | tutorials, curriculum, learner experience |
+
 ## What a persona looks like
 
 Each file is short: an identity line and a handful of core principles. In full,
