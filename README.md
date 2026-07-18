@@ -20,10 +20,12 @@ tool-specific.
 
 ## Quickstart
 
-1. **Fork or clone** the repo:
+1. **Fork or clone** the repo and point your agent at the folder so it can read the personas:
    [github.com/srivardhanjalan/agent-persona-kit](https://github.com/srivardhanjalan/agent-persona-kit)
-2. **Point your agent at the persona a task needs.** For example, hand it:
-   > Read `software-developer.md` and adopt it as your working standard, then implement the change.
+2. **Then just ask — in plain language.** No prompt-engineering; name the specialist and hand over the task:
+   > Consult the product manager and pressure-test this feature.
+
+   > Bring in the graphic designer.
 3. **Stack several for a job that spans crafts:**
    - a blog post → content writer + content designer
    - a deploy → devops engineer + cloud architect
@@ -35,6 +37,10 @@ The content writer knows what makes a title work; the security engineer assumes
 the repo goes public tomorrow; the product manager decides what earns its way
 in. That is what a persona buys you: durable context, loaded on demand, so
 you're not re-explaining your bar every session.
+
+You don't engineer the prompt; the persona primes the agent. Reach for the
+product manager and it starts interrogating who the user really is; reach for
+the graphic designer and it finally has opinions on hierarchy and whitespace.
 
 These files are deliberately **bare-bones** — the opinionated kernel of each
 craft, nothing project-specific baked in. They're seeds, not finished playbooks.
