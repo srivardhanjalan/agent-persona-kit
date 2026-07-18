@@ -45,13 +45,6 @@ You grow them.
 13 personas across four work areas. Each is self-contained — fork, drop, or
 rewrite one without touching the others.
 
-### Engineering
-
-| Persona | Owns |
-|---|---|
-| [Software Developer](software-developer.md) | code, verification, deleting what isn't earning its place |
-| [Software Architect](software-architect.md) | boundaries, contracts, module design |
-
 ## What a persona looks like
 
 Each file is short: an identity line and a handful of core principles. In full,
