@@ -11,40 +11,52 @@
       radial-gradient(950px 520px at 104% 118%, rgba(247,120,186,.13), transparent 60%),
       linear-gradient(160deg,#0b1020 0%,#0e1428 55%,#0b1020 100%);
     color:#e8ecf4;
-    padding:76px 84px;
+    padding:60px 84px;
     display:flex; flex-direction:column;
   }
   .kicker { font-size:22px; font-weight:700; letter-spacing:.32em; text-transform:uppercase;
     color:#7d8bb0; }
-  h1 { font-size:88px; font-weight:800; letter-spacing:-2.5px; line-height:1; margin-top:14px; }
+  h1 { font-size:80px; font-weight:800; letter-spacing:-2.5px; line-height:1; margin-top:12px; }
   h1 .k { background:linear-gradient(92deg,#58a6ff 0%,#3fb950 34%,#bc8cff 68%,#f778ba 100%);
     -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .tag { font-size:27px; color:#aeb8d4; margin-top:20px; font-weight:500; max-width:900px; line-height:1.4; }
-  .cols { display:flex; gap:26px; margin-top:40px; }
+  .tag { font-size:25px; color:#aeb8d4; margin-top:16px; font-weight:500; max-width:930px; line-height:1.35; }
+  .orch { display:flex; align-items:center; gap:15px; margin-top:26px; padding-bottom:18px;
+    border-bottom:1px solid rgba(255,255,255,.10); }
+  .orch .olab { font-size:16px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#e3b341;
+    display:flex; align-items:center; gap:9px; }
+  .orch .orole { font-size:21px; font-weight:700; color:#e8ecf4; }
+  .orch .ohint { font-size:16px; color:#7d8bb0; font-weight:500; }
+  .cols { display:flex; gap:26px; margin-top:24px; }
   .col { flex:1; }
   .lab { font-size:16px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
-    display:flex; align-items:center; gap:9px; margin-bottom:14px; }
+    display:flex; align-items:center; gap:9px; margin-bottom:12px; }
   .dot { width:11px; height:11px; border-radius:50%; position:relative; top:-1px; }
-  .role { font-size:20px; font-weight:600; color:#dfe6f5; padding:7px 0; line-height:1.2; }
+  .role { font-size:19px; font-weight:600; color:#dfe6f5; padding:5px 0; line-height:1.2; }
   .eng   .lab { color:#7cb8ff }
   .infra .lab { color:#69d98a }
   .prod  .lab { color:#c7a6ff }
   .cont  .lab { color:#f89ac9 }
-  .foot { position:absolute; right:84px; top:82px; text-align:right;
+  .foot { position:absolute; right:84px; top:66px; text-align:right;
     font-size:18px; color:#7d8bb0; font-weight:600; line-height:1.6; }
   .foot b { color:#e8ecf4; }
 </style></head>
 <body>
 <div class="wrap">
-  <div class="foot"><b>13 personas</b><br>MIT · fork &amp; train</div>
+  <div class="foot"><b>16 personas</b><br>MIT · fork &amp; train</div>
   <div class="kicker">Starter roles for AI agents</div>
   <h1>Agent Persona <span class="k">Kit</span></h1>
-  <div class="tag">A team of specialists your agent can summon by name — one file per craft, bare-bones and independent.</div>
+  <div class="tag">A team of specialists your agent summons by name — one file per craft, wired to consult and review each other.</div>
+  <div class="orch">
+    <span class="olab"><span class="dot" style="background:#e3b341"></span>Orchestration</span>
+    <span class="orole">Team Leader</span>
+    <span class="ohint">— coordinates the four craft areas below</span>
+  </div>
   <div class="cols">
     <div class="col eng">
       <div class="lab"><span class="dot" style="background:#58a6ff"></span>Engineering</div>
       <div class="role">Software Developer</div>
       <div class="role">Software Architect</div>
+      <div class="role">Software Tester</div>
     </div>
     <div class="col infra">
       <div class="lab"><span class="dot" style="background:#3fb950"></span>Infra &amp; Security</div>
@@ -64,6 +76,7 @@
       <div class="role">Content Designer</div>
       <div class="role">Graphic Designer</div>
       <div class="role">Social Media Manager</div>
+      <div class="role">Influencer</div>
       <div class="role">Educator</div>
     </div>
   </div>
