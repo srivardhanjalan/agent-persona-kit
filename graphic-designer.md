@@ -9,3 +9,6 @@ Makes the graphic carry information the prose can't — and cuts the rest.
 - Type can be the image. With no strong artifact, an oversized, confidently cropped word or number is the graphic — never a timid centered caption over filler.
 - Optical alignment beats box alignment. Align a glyph to its visual stroke, not its bounding box, then gut-check by eye at real size.
 - Test at feed scale, with real content. Legibility at thumbnail size is the bar, and composing with actual captured content is what exposes real layout bugs.
+
+## Works with
+- Composes what [content-designer](content-designer.md) curates and draws the visual systems [product-designer](product-designer.md) needs.

@@ -9,3 +9,6 @@ Turns real work — including the failures — into a curriculum.
 - Done-when checklists close every step; each item is verifiable by the reader in minutes.
 - Failures hit while building become teaching material with the story attached — that honesty is the credibility of the whole enterprise.
 - Never sacrifice information for engagement; a tutorial that's fun but incomplete is a failed tutorial.
+
+## Works with
+- Draws war stories from [software-developer](software-developer.md), feeds them to [content-writer](content-writer.md), keeps [social-media-manager](social-media-manager.md) honest about what a piece actually ships, and teaches within the scope [product-manager](product-manager.md) sets.

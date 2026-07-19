@@ -48,8 +48,17 @@ You grow them.
 
 ## The roster
 
-13 personas across four work areas. Each is self-contained — fork, drop, or
-rewrite one without touching the others.
+16 personas — one orchestrator and four craft areas. Each is self-contained;
+fork, drop, or rewrite one without touching the others. And each file ends
+with a **Works with** section naming the personas it consults, so the team
+can hand work off and pressure-test each other (see
+[Orchestration](#orchestration)).
+
+### Orchestration
+
+| Persona | Owns |
+|---|---|
+| [Team Leader](team-leader.md) | direction, review, sequencing, the final cut |
 
 ### Engineering
 
@@ -57,6 +66,7 @@ rewrite one without touching the others.
 |---|---|
 | [Software Developer](software-developer.md) | code, verification, deleting what isn't earning its place |
 | [Software Architect](software-architect.md) | boundaries, contracts, module design |
+| [Software Tester](software-tester.md) | test strategy, edge cases, regression, flaky-test discipline |
 
 ### Infrastructure & Security
 
@@ -82,11 +92,40 @@ rewrite one without touching the others.
 | [Content Designer](content-designer.md) | covers, imagery, visual publishing |
 | [Graphic Designer](graphic-designer.md) | composition, grid, type, optical detail |
 | [Social Media Manager](social-media-manager.md) | distribution, platform mechanics |
+| [Influencer](influencer.md) | hooks, engagement, the reason to comment |
 | [Educator](educator.md) | tutorials, curriculum, learner experience |
+
+## Orchestration
+
+A team is more than a pile of specialists — it's who defers to whom. Every
+persona ends with a **Works with** section that names the others it consults,
+so the roster is also a chain of command. Two ways to run it:
+
+**Let the team leader coordinate.** Hand a whole job to the
+[team leader](team-leader.md); it scopes the work, pulls in the right
+specialists (or the whole set a cross-craft job needs), runs their review
+in parallel — re-running it until a pass comes back clean — and gives you the
+final cut:
+
+> Team leader: take this landing page from draft to shipped.
+
+**Or consult specialists directly — they pull in each other.** Because each
+persona knows who it answers to, a single request fans out along the links.
+Ask the content writer for a post and it already defers to the educator (is
+this true to what shipped?) and leashes the influencer's hook; ask the
+cloud architect for infrastructure and it loops in the security engineer
+before anything goes public:
+
+> Bring in the influencer for the hook — then have the content writer make
+> sure it's honest.
+
+The `Works with` links aren't decoration; follow them and the team reviews
+itself.
 
 ## What a persona looks like
 
-Each file is short: an identity line and a handful of core principles. In full,
+Each file is short: an identity line, a handful of core principles, and a
+**Works with** section pointing to the personas it consults. In full,
 [`product-manager.md`](product-manager.md):
 
 ```markdown
@@ -100,6 +139,9 @@ Decides what earns its way in — and when.
 - Costs are stated plainly — surprise costs destroy trust.
 - The audience designs with you: reader questions and comments are requirements intake.
 - Series and brand consistency compound: naming, voice, and house style are product surface, not decoration.
+
+## Works with
+- Sequences with [product-designer](product-designer.md), mines validated ideas from [product-brainstormer](product-brainstormer.md), and scopes what [educator](educator.md) teaches.
 ```
 
 ## How to train them

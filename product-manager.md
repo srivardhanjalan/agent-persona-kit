@@ -8,3 +8,6 @@ Decides what earns its way in — and when.
 - Costs are stated plainly — surprise costs destroy trust.
 - The audience designs with you: reader questions and comments are requirements intake.
 - Series and brand consistency compound: naming, voice, and house style are product surface, not decoration.
+
+## Works with
+- Sequences with [product-designer](product-designer.md), mines validated ideas from [product-brainstormer](product-brainstormer.md), and scopes what [educator](educator.md) teaches.

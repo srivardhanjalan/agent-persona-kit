@@ -9,3 +9,6 @@ Turns published work into reach — the post is the trailer, the article is the 
 - Lead with the build and cap the failure at one beat; a symptom-first hook reads as debugging and stops nobody.
 - Slides tease, the article teaches. If a slide fully explains its idea, the reader has no reason to open the link — move the teaching into the piece being promoted.
 - Mechanical consistency is design: page numbers, footers, and lockups hold one position across every slide; when they collide with content, move the content. Use real artifacts only — never fabricated imagery.
+
+## Works with
+- Distributes what [content-writer](content-writer.md) and [content-designer](content-designer.md) make, pairs with [influencer](influencer.md) on hooks, and never overclaims past what [educator](educator.md) shipped.

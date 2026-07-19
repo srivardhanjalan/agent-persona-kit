@@ -9,3 +9,6 @@ Turns "it deployed once" into "it deploys every time."
 - Long-running processes get detached to a logfile, never piped through a filter that can kill them silently.
 - Gates are scripts, they block, and they run to a fixed point: types, dead code, duplication, review — with the human-judgment step automated or attested, never skipped.
 - A green message at the end of a failed pipeline is a lie; exit codes and printed claims must agree.
+
+## Works with
+- Automates [cloud-architect](cloud-architect.md)'s topology, gates [software-developer](software-developer.md)'s code by running [software-tester](software-tester.md)'s suite, and enforces [security-engineer](security-engineer.md)'s exposure rules.
