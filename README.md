@@ -48,13 +48,13 @@ You grow them.
 
 ## The roster
 
-16 personas — one orchestrator and four craft areas. Each is self-contained;
+16 personas — one orchestrator and six craft areas. Each is self-contained;
 fork, drop, or rewrite one without touching the others. And each file ends
 with a **Works with** section naming the personas it consults, so the team
 can hand work off and pressure-test each other (see
 [Orchestration](#orchestration)).
 
-### Orchestration
+### Orchestrator
 
 | Persona | Owns |
 |---|---|
@@ -81,19 +81,29 @@ can hand work off and pressure-test each other (see
 | Persona | Owns |
 |---|---|
 | [Product Manager](product-manager.md) | scope, sequencing, audience value |
-| [Product Designer](product-designer.md) | UX, interaction, design systems |
 | [Product Brainstormer](product-brainstormer.md) | idea generation, research, validation |
 
-### Content & Communication
+### Design
+
+| Persona | Owns |
+|---|---|
+| [Product Designer](product-designer.md) | UX, interaction, design systems |
+| [Content Designer](content-designer.md) | covers, imagery, visual publishing |
+| [Graphic Designer](graphic-designer.md) | composition, grid, type, optical detail |
+
+### Writing & Learning
 
 | Persona | Owns |
 |---|---|
 | [Content Writer](content-writer.md) | prose, titles, voice |
-| [Content Designer](content-designer.md) | covers, imagery, visual publishing |
-| [Graphic Designer](graphic-designer.md) | composition, grid, type, optical detail |
+| [Educator](educator.md) | tutorials, curriculum, learner experience |
+
+### Distribution & Growth
+
+| Persona | Owns |
+|---|---|
 | [Social Media Manager](social-media-manager.md) | distribution, platform mechanics |
 | [Influencer](influencer.md) | hooks, engagement, the reason to comment |
-| [Educator](educator.md) | tutorials, curriculum, learner experience |
 
 ## Orchestration
 
@@ -119,7 +129,7 @@ before anything goes public:
 > Bring in the influencer for the hook — then have the content writer make
 > sure it's honest.
 
-The `Works with` links aren't decoration; follow them and the team reviews
+The **Works with** links aren't decoration; follow them and the team reviews
 itself.
 
 ## What a persona looks like
@@ -146,7 +156,7 @@ Decides what earns its way in — and when.
 
 ## How to train them
 
-Personas earn their weight by learning. When a project teaches you something — a
+Personas earn their place by learning. When a project teaches you something — a
 rule, a correction, a practice that worked — add it to the persona it belongs
 to, in that craft's voice, with the reasoning that earned it.
 

@@ -4,11 +4,11 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   html,body { -webkit-font-smoothing:antialiased; }
   .wrap {
-    width:1280px; height:640px; position:relative; overflow:hidden;
+    width:1280px; height:720px; position:relative; overflow:hidden;
     font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
     background:
-      radial-gradient(1100px 520px at 12% -12%, rgba(88,166,255,.15), transparent 60%),
-      radial-gradient(950px 520px at 104% 118%, rgba(247,120,186,.13), transparent 60%),
+      radial-gradient(1100px 560px at 12% -12%, rgba(88,166,255,.15), transparent 60%),
+      radial-gradient(950px 560px at 104% 118%, rgba(247,120,186,.13), transparent 60%),
       linear-gradient(160deg,#0b1020 0%,#0e1428 55%,#0b1020 100%);
     color:#e8ecf4;
     padding:60px 84px;
@@ -20,22 +20,25 @@
   h1 .k { background:linear-gradient(92deg,#58a6ff 0%,#3fb950 34%,#bc8cff 68%,#f778ba 100%);
     -webkit-background-clip:text; background-clip:text; color:transparent; }
   .tag { font-size:25px; color:#aeb8d4; margin-top:16px; font-weight:500; max-width:930px; line-height:1.35; }
-  .orch { display:flex; align-items:center; gap:15px; margin-top:26px; padding-bottom:18px;
+  .orch { display:flex; align-items:center; gap:15px; margin-top:24px; padding-bottom:18px;
     border-bottom:1px solid rgba(255,255,255,.10); }
   .orch .olab { font-size:16px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#e3b341;
     display:flex; align-items:center; gap:9px; }
   .orch .orole { font-size:21px; font-weight:700; color:#e8ecf4; }
   .orch .ohint { font-size:16px; color:#7d8bb0; font-weight:500; }
-  .cols { display:flex; gap:26px; margin-top:24px; }
+  .grid { display:flex; flex-direction:column; gap:30px; margin-top:26px; }
+  .cols { display:flex; gap:26px; }
   .col { flex:1; }
-  .lab { font-size:16px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  .lab { font-size:16px; font-weight:800; letter-spacing:.11em; text-transform:uppercase;
     display:flex; align-items:center; gap:9px; margin-bottom:12px; }
   .dot { width:11px; height:11px; border-radius:50%; position:relative; top:-1px; }
   .role { font-size:19px; font-weight:600; color:#dfe6f5; padding:5px 0; line-height:1.2; }
-  .eng   .lab { color:#7cb8ff }
-  .infra .lab { color:#69d98a }
-  .prod  .lab { color:#c7a6ff }
-  .cont  .lab { color:#f89ac9 }
+  .eng    .lab { color:#7cb8ff }
+  .infra  .lab { color:#69d98a }
+  .prod   .lab { color:#c7a6ff }
+  .design .lab { color:#f0a35e }
+  .wl     .lab { color:#5fd3dc }
+  .dg     .lab { color:#f89ac9 }
   .foot { position:absolute; right:84px; top:66px; text-align:right;
     font-size:18px; color:#7d8bb0; font-weight:600; line-height:1.6; }
   .foot b { color:#e8ecf4; }
@@ -49,35 +52,45 @@
   <div class="orch">
     <span class="olab"><span class="dot" style="background:#e3b341"></span>Orchestration</span>
     <span class="orole">Team Leader</span>
-    <span class="ohint">— coordinates the four craft areas below</span>
+    <span class="ohint">— coordinates the six craft areas below</span>
   </div>
-  <div class="cols">
-    <div class="col eng">
-      <div class="lab"><span class="dot" style="background:#58a6ff"></span>Engineering</div>
-      <div class="role">Software Developer</div>
-      <div class="role">Software Architect</div>
-      <div class="role">Software Tester</div>
+  <div class="grid">
+    <div class="cols">
+      <div class="col eng">
+        <div class="lab"><span class="dot" style="background:#58a6ff"></span>Engineering</div>
+        <div class="role">Software Developer</div>
+        <div class="role">Software Architect</div>
+        <div class="role">Software Tester</div>
+      </div>
+      <div class="col infra">
+        <div class="lab"><span class="dot" style="background:#3fb950"></span>Infra &amp; Security</div>
+        <div class="role">Cloud Architect</div>
+        <div class="role">DevOps Engineer</div>
+        <div class="role">Security Engineer</div>
+      </div>
+      <div class="col prod">
+        <div class="lab"><span class="dot" style="background:#bc8cff"></span>Product</div>
+        <div class="role">Product Manager</div>
+        <div class="role">Product Brainstormer</div>
+      </div>
     </div>
-    <div class="col infra">
-      <div class="lab"><span class="dot" style="background:#3fb950"></span>Infra &amp; Security</div>
-      <div class="role">Cloud Architect</div>
-      <div class="role">DevOps Engineer</div>
-      <div class="role">Security Engineer</div>
-    </div>
-    <div class="col prod">
-      <div class="lab"><span class="dot" style="background:#bc8cff"></span>Product</div>
-      <div class="role">Product Manager</div>
-      <div class="role">Product Designer</div>
-      <div class="role">Product Brainstormer</div>
-    </div>
-    <div class="col cont">
-      <div class="lab"><span class="dot" style="background:#f778ba"></span>Content &amp; Comms</div>
-      <div class="role">Content Writer</div>
-      <div class="role">Content Designer</div>
-      <div class="role">Graphic Designer</div>
-      <div class="role">Social Media Manager</div>
-      <div class="role">Influencer</div>
-      <div class="role">Educator</div>
+    <div class="cols">
+      <div class="col design">
+        <div class="lab"><span class="dot" style="background:#f0883e"></span>Design</div>
+        <div class="role">Product Designer</div>
+        <div class="role">Content Designer</div>
+        <div class="role">Graphic Designer</div>
+      </div>
+      <div class="col wl">
+        <div class="lab"><span class="dot" style="background:#39c5cf"></span>Writing &amp; Learning</div>
+        <div class="role">Content Writer</div>
+        <div class="role">Educator</div>
+      </div>
+      <div class="col dg">
+        <div class="lab"><span class="dot" style="background:#f778ba"></span>Distribution &amp; Growth</div>
+        <div class="role">Social Media Manager</div>
+        <div class="role">Influencer</div>
+      </div>
     </div>
   </div>
 </div>
