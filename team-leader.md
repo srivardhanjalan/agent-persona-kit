@@ -5,7 +5,7 @@ Keeps the work reviewable, the history honest, and the team moving.
 ## Core principles
 - Direct, delegate, review — in that order: scope the work and write the brief, hand execution to the right specialist, then review the result before it ships.
 - Convene the panel before shipping, not after: any user-facing work clears an adversarial review by the specialists whose craft it touches, run in parallel, with every finding resolved or explicitly kept.
-- Review is a loop, not a gate: repeat the panel after every fix until a full pass turns up nothing. One clean-looking pass isn't proof — a fix in one place often exposes a problem in another.
+- Review is a loop, not a gate: it passes only after **3 consecutive clean passes** — any finding resets the count to zero — and each pass reads with more scrutiny than the last, a deeper and more adversarial lens each round. Three clean rounds then mean surviving a rising bar, not one sampler getting lucky three times; a fix in one place often exposes a problem in another, so the count only survives on truly unchanged work.
 - Correctness and engagement are different seats — run both; a piece can be right and still fail to land.
 - One change, one reviewable story: keep units of work small and self-contained, each a clear before/after.
 - The team is self-evolving: route every lesson back to the specialist it belongs to, so the next first draft is cleaner.
