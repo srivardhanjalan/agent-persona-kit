@@ -114,6 +114,10 @@ can hand work off and pressure-test each other (see
 
 ## Orchestration
 
+<p align="center">
+  <img src="assets/orchestration.png" alt="How the orchestration works: one prompt goes to the team leader, which decomposes it, assigns the specialists, and loops the review until it comes back clean, then ships." width="560">
+</p>
+
 A team is more than a pile of specialists — it's who defers to whom. Every
 persona ends with a **Works with** section that names the others it consults,
 so the roster is also a chain of command. Two ways to run it:
@@ -138,6 +142,15 @@ before anything goes public:
 
 The **Works with** links aren't decoration; follow them and the team reviews
 itself.
+
+## See it in action
+
+One prompt — `Team leader: build & ship my launch page — hero, three features, a
+sign-up CTA` — produced a complete, reviewed landing page. The team leader
+scoped it, the specialists built it, and the review loop caught real bugs
+(truncated roster lines, a relationship written backwards, a clipping code
+panel) and fixed them before it shipped. The full artifact — the page and the
+run that made it — is in **[`example/`](example/)**.
 
 ## What a persona looks like
 

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Persona Kit — a team you can summon by name</title>
+<meta name="description" content="A free, MIT-licensed starter set of 18 specialist personas — one Markdown file each — that consult each other and report to a team leader who runs the whole job.">
+<style>
+  :root {
+    --eng: #58a6ff;
+    --infra: #3fb950;
+    --product: #bc8cff;
+    --data: #ef6f6c;
+    --design: #f0883e;
+    --writing: #39c5cf;
+    --dist: #f778ba;
+    --gold: #e3b341;
+    --ink: #e6edf3;
+    --ink-dim: #9aa4b2;
+    --ink-dimmer: #6b7280;
+    --border: rgba(255, 255, 255, 0.09);
+    --card-bg: rgba(255, 255, 255, 0.03);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0b1020;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background:
+      radial-gradient(700px 420px at 12% -6%, rgba(88, 166, 255, 0.16), transparent 60%),
+      radial-gradient(650px 500px at 92% 8%, rgba(247, 120, 186, 0.13), transparent 60%),
+      radial-gradient(900px 600px at 50% 110%, rgba(188, 140, 255, 0.10), transparent 60%),
+      linear-gradient(160deg, #0b1020, #0e1428, #0b1020);
+    min-height: 100vh;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  code, pre, .mono {
+    font-family: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    background: rgba(11, 16, 32, 0.72);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .topnav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .wordmark {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .wordmark .gradient-kit {
+    background: linear-gradient(90deg, #58a6ff, #3fb950, #bc8cff, #f778ba);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .topnav .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+    color: var(--ink-dim);
+  }
+
+  .topnav .nav-links a { text-decoration: none; }
+  .topnav .nav-links a:hover { color: var(--ink); }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0b1020;
+    background: linear-gradient(90deg, #58a6ff, #bc8cff);
+    padding: 8px 16px;
+    border-radius: 7px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero {
+    padding: 100px 0 76px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 28px;
+  }
+
+  h1.headline {
+    font-size: 50px;
+    line-height: 1.14;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    max-width: 760px;
+    margin: 0 auto 24px;
+  }
+
+  p.subhead {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    max-width: 640px;
+    margin: 0 auto 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #58a6ff, #bc8cff 50%, #f778ba);
+    color: #0b1020;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 28px;
+    border-radius: 9px;
+    text-decoration: none;
+  }
+
+  .cta-primary svg { flex-shrink: 0; }
+
+  .clone-command {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .clone-command .prompt-char { color: var(--ink-dimmer); }
+
+  .clone-command .copy-hint {
+    color: var(--ink-dimmer);
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border-left: 1px solid var(--border);
+    padding-left: 12px;
+    margin-left: 4px;
+  }
+
+  .cta-microcopy {
+    font-size: 13px;
+    color: var(--ink-dimmer);
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section { padding: 72px 0; }
+
+  .section-head {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 48px;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dimmer);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--ink-dim);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ---------- FEATURES ---------- */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 24px;
+  }
+
+  .feature-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .feature-card h3 {
+    font-size: 17px;
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+
+  .feature-card p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink-dim);
+    margin: 0;
+  }
+
+  /* ---------- ROSTER ---------- */
+  .roster-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .roster-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+  }
+
+  .roster-card.orchestrator {
+    grid-column: span 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(90deg, rgba(227, 179, 65, 0.10), rgba(227, 179, 65, 0.02));
+    border-color: rgba(227, 179, 65, 0.35);
+  }
+
+  .roster-card.orchestrator .orch-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .area-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .roster-card .area-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .roster-card.orchestrator .area-name { margin-bottom: 4px; }
+
+  .persona-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .persona-list li {
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .persona-list .owns {
+    display: block;
+    font-size: 12.5px;
+    color: var(--ink-dimmer);
+    line-height: 1.4;
+  }
+
+  .orch-owns {
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    margin: 0;
+  }
+
+  .orch-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 2px;
+  }
+
+  /* ---------- PERSONA FILE EXAMPLE ---------- */
+  .persona-file-panel {
+    background: #080b16;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .file-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .file-titlebar .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .file-titlebar .filename {
+    margin-left: 8px;
+    font-size: 13px;
+    color: var(--ink-dim);
+  }
+
+  pre.persona-code {
+    margin: 0;
+    padding: 26px 28px 30px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #c9d1d9;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  pre.persona-code .h1 { color: #f778ba; font-weight: 700; }
+  pre.persona-code .h2 { color: #58a6ff; font-weight: 700; }
+  pre.persona-code .dash { color: var(--ink-dimmer); }
+  pre.persona-code .link { color: #39c5cf; }
+
+  /* ---------- ORCHESTRATION EXAMPLE ---------- */
+  .orch-example {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px;
+  }
+
+  .orch-prompt {
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: rgba(227, 179, 65, 0.08);
+    border: 1px solid rgba(227, 179, 65, 0.3);
+    border-radius: 9px;
+    padding: 14px 18px;
+    margin-bottom: 28px;
+  }
+
+  .orch-prompt .who { color: var(--gold); font-weight: 700; }
+
+  .orch-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .orch-step {
+    position: relative;
+    padding: 18px 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .orch-step .step-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-dimmer);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .orch-step h4 {
+    font-size: 14px;
+    margin: 0 0 6px;
+  }
+
+  .orch-step p {
+    font-size: 12.5px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .orch-step .who-chip {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-top: 10px;
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta {
+    text-align: center;
+    padding: 90px 0 100px;
+  }
+
+  .final-cta h2 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+  }
+
+  .final-cta p {
+    color: var(--ink-dim);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 40px;
+  }
+
+  footer .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--ink-dimmer);
+  }
+
+  footer a { text-decoration: none; color: var(--ink-dim); }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 900px) {
+    h1.headline { font-size: 36px; }
+    .features { grid-template-columns: 1fr; }
+    .roster-grid { grid-template-columns: repeat(2, 1fr); }
+    .roster-card.orchestrator { grid-column: span 2; flex-direction: column; align-items: flex-start; }
+    .orch-steps { grid-template-columns: repeat(2, 1fr); }
+    .topnav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <div class="wordmark">Agent Persona <span class="gradient-kit">Kit</span></div>
+    <div class="nav-links">
+      <a href="#roster">Roster</a>
+      <a href="#persona-example">A persona file</a>
+      <a href="#orchestration">Orchestration</a>
+    </div>
+    <a class="nav-cta" href="https://github.com/srivardhanjalan/agent-persona-kit">Fork it on GitHub</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">MIT-licensed · 18 personas · one Markdown file each</span>
+    <h1 class="headline">A good agent isn't one prompt. It's a team you can summon by name.</h1>
+    <p class="subhead">A free, MIT-licensed starter set of 18 specialist personas — one Markdown file each — that consult each other and report to a team leader who runs the whole job.</p>
+    <div class="hero-actions">
+      <a class="cta-primary" href="https://github.com/srivardhanjalan/agent-persona-kit">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        Fork it on GitHub
+      </a>
+      <div class="clone-command">
+        <span class="prompt-char">$</span>
+        <span>git clone https://github.com/srivardhanjalan/agent-persona-kit</span>
+        <span class="copy-hint">copy &amp; drop it into your agent</span>
+      </div>
+      <p class="cta-microcopy">MIT-licensed. Eighteen personas, one Markdown file each — clone and start assigning work.</p>
+    </div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Why it works</div>
+      <h2 class="section-title">Durable context, loaded on demand</h2>
+      <p class="section-sub">Each persona is the opinionated kernel of a craft — nothing project-specific baked in. You're not re-explaining your bar every session.</p>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(88,166,255,0.14);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-1a7 7 0 0 1 14 0v1"></path></svg>
+        </div>
+        <h3>Summon by name</h3>
+        <p>Ask for the security engineer or the content writer by name and the agent inherits that craft's opinions instantly — no prompt engineering.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(227,179,65,0.14);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e3b341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"></path></svg>
+        </div>
+        <h3>A chain of command</h3>
+        <p>Hand a job to the team leader and it scopes the work, pulls in the right specialists, and each persona's own Works-with links pull in the next.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(247,120,186,0.14);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f778ba" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+        </div>
+        <h3>Reviews itself, then yours</h3>
+        <p>The team leader reruns every persona's review until it passes clean, and each persona is one Markdown file you're free to fork, rewrite, and train.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roster">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">The roster</div>
+      <h2 class="section-title">18 personas, one orchestrator, seven crafts</h2>
+      <p class="section-sub">Each is self-contained — fork, drop, or rewrite one without touching the others. Every file ends with a Works-with section, so the roster is also a chain of command.</p>
+    </div>
+    <div class="roster-grid">
+      <div class="roster-card orchestrator">
+        <div class="orch-left">
+          <span class="area-dot" style="background: var(--gold);"></span>
+          <div>
+            <p class="orch-title">Team Leader</p>
+            <p class="orch-owns">Orchestrator — direction, review, sequencing, the final cut</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="roster-card">
+        <div class="area-name"><span class="area-dot" style="background: var(--eng);"></span>Engineering</div>
+        <ul class="persona-list">
+          <li>Software Developer<span class="owns">code, verification, deleting what isn't earning its place</span></li>
+          <li>Software Architect<span class="owns">boundaries, contracts, module design</span></li>
+          <li>Software Tester<span class="owns">test strategy, edge cases, regression, flaky-test discipline</span></li>
+        </ul>
+      </div>
+
+      <div class="roster-card">
+        <div class="area-name"><span class="area-dot" style="background: var(--infra);"></span>Infrastructure &amp; Security</div>
+        <ul class="persona-list">
+          <li>Cloud Architect<span class="owns">infrastructure topology, cost, teardown</span></li>
+          <li>DevOps Engineer<span class="owns">pipelines, deploys, gates</span></li>
+          <li>Security Engineer<span class="owns">secrets, auth, exposure discipline</span></li>
+        </ul>
+      </div>
+
+      <div class="roster-card">
+        <div class="area-name"><span class="area-dot" style="background: var(--product);"></span>Product</div>
+        <ul class="persona-list">
+          <li>Product Manager<span class="owns">scope, sequencing, audience value</span></li>
+          <li>Product Brainstormer<span class="owns">idea generation, research, validation</span></li>
+        </ul>
+      </div>
+
+      <div class="roster-card">
+        <div class="area-name"><span class="area-dot" style="background: var(--data);"></span>Data &amp; Research</div>
+        <ul class="persona-list">
+          <li>Data Scientist<span class="owns">data analysis, statistical rigor, verifying claims with data</span></li>
+          <li>Researcher<span class="owns">sourcing, evidence, synthesis, citation discipline</span></li>
+        </ul>
+      </div>
+
+      <div class="roster-card">
+        <div class="area-name"><span class="area-dot" style="background: var(--design);"></span>Design</div>
+        <ul class="persona-list">
+          <li>Product Designer<span class="owns">UX, interaction, design systems</span></li>
+          <li>Content Designer<span class="owns">covers, imagery, visual publishing</span></li>
+          <li>Graphic Designer<span class="owns">composition, grid, type, optical detail</span></li>
+        </ul>
+      </div>
+
+      <div class="roster-card">
+        <div class="area-name"><span class="area-dot" style="background: var(--writing);"></span>Writing &amp; Learning</div>
+        <ul class="persona-list">
+          <li>Content Writer<span class="owns">prose, titles, voice</span></li>
+          <li>Educator<span class="owns">tutorials, curriculum, learner experience</span></li>
+        </ul>
+      </div>
+
+      <div class="roster-card">
+        <div class="area-name"><span class="area-dot" style="background: var(--dist);"></span>Distribution &amp; Growth</div>
+        <ul class="persona-list">
+          <li>Social Media Manager<span class="owns">distribution, platform mechanics</span></li>
+          <li>Influencer<span class="owns">hooks, engagement, the reason to comment</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="persona-example">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">What a persona looks like</div>
+      <h2 class="section-title">An identity line, a few principles, and who it defers to</h2>
+      <p class="section-sub">Every file is short and copy-pasteable. Here is <code class="mono">product-manager.md</code>, in full, exactly as it ships in the repo.</p>
+    </div>
+    <div class="persona-file-panel">
+      <div class="file-titlebar">
+        <span class="dot" style="background:#f778ba;"></span>
+        <span class="dot" style="background:#e3b341;"></span>
+        <span class="dot" style="background:#3fb950;"></span>
+        <span class="filename">product-manager.md</span>
+      </div>
+      <pre class="persona-code"><span class="h1"># Product Manager</span>
+
+Decides what earns its way in — and when.
+
+<span class="h2">## Core principles</span>
+<span class="dash">-</span> YAGNI is product law: features, config, and content ship when something consumes them, never in anticipation.
+<span class="dash">-</span> Sequence for narrative and dependency: finish and verify one release before the next; each ends in a state a user can hold.
+<span class="dash">-</span> Costs are stated plainly — surprise costs destroy trust.
+<span class="dash">-</span> The audience designs with you: reader questions and comments are requirements intake.
+<span class="dash">-</span> Series and brand consistency compound: naming, voice, and house style are product surface, not decoration.
+
+<span class="h2">## Works with</span>
+<span class="dash">-</span> Sequences with <span class="link">[product-designer](product-designer.md)</span>, mines validated ideas from <span class="link">[product-brainstormer](product-brainstormer.md)</span>, and scopes what <span class="link">[educator](educator.md)</span> teaches.
+<span class="dash">-</span> Weighs <span class="link">[researcher](researcher.md)</span>'s evidence and <span class="link">[data-scientist](data-scientist.md)</span>'s numbers before deciding what earns its way in.</pre>
+    </div>
+  </div>
+</section>
+
+<section id="orchestration">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-label">Orchestration</div>
+      <h2 class="section-title">Hand it to the team leader — it runs the whole job</h2>
+      <p class="section-sub">A team is more than a pile of specialists — it's who defers to whom. Every persona's Works-with links make the roster a chain of command.</p>
+    </div>
+    <div class="orch-example">
+      <div class="orch-prompt"><span class="who">&gt; Team leader:</span> take this landing page from draft to shipped.</div>
+      <div class="orch-steps">
+        <div class="orch-step">
+          <div class="step-num">STEP 1</div>
+          <h4>Scope the work</h4>
+          <p>Writes the brief: one screen, one CTA, the real roster and a real persona shown in full.</p>
+          <span class="who-chip" style="background: rgba(227,179,65,0.16); color: var(--gold);">Team Leader</span>
+        </div>
+        <div class="orch-step">
+          <div class="step-num">STEP 2</div>
+          <h4>Pull in specialists</h4>
+          <p>Product manager scopes it, content writer drafts the copy, product &amp; graphic designers build the page.</p>
+          <span class="who-chip" style="background: rgba(188,140,255,0.16); color: var(--product);">Product · Design · Writing</span>
+        </div>
+        <div class="orch-step">
+          <div class="step-num">STEP 3</div>
+          <h4>Follow the Works-with links</h4>
+          <p>Content writer defers to the educator for truth; the graphic designer draws the visual system the product designer needs.</p>
+          <span class="who-chip" style="background: rgba(57,197,207,0.16); color: var(--writing);">Cross-craft handoff</span>
+        </div>
+        <div class="orch-step">
+          <div class="step-num">STEP 4</div>
+          <h4>Review to a clean pass</h4>
+          <p>Convenes the panel, runs it in parallel, reruns until three consecutive clean passes — then gives the final cut.</p>
+          <span class="who-chip" style="background: rgba(227,179,65,0.16); color: var(--gold);">Team Leader</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Clone it. Assign the first job.</h2>
+    <p>MIT-licensed. Eighteen personas, one Markdown file each — clone and start assigning work.</p>
+    <div class="hero-actions">
+      <a class="cta-primary" href="https://github.com/srivardhanjalan/agent-persona-kit">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        Fork it on GitHub
+      </a>
+      <div class="clone-command">
+        <span class="prompt-char">$</span>
+        <span>git clone https://github.com/srivardhanjalan/agent-persona-kit</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>MIT License · Fork it, adapt it, make it yours.</span>
+    <a href="https://github.com/srivardhanjalan/agent-persona-kit">github.com/srivardhanjalan/agent-persona-kit</a>
+  </div>
+</footer>
+
+</body>
+</html>
