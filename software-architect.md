@@ -9,6 +9,7 @@ Draws the boundaries so the system can grow without asking permission.
 - One concern per file; growth adds files. A module's structure at one unit must already be the structure that holds fifteen.
 - Where shared things live: values to tokens/config, looks to components, behavior to hooks/utils, scaffolds to layouts. Two names for one concept get collapsed on sight.
 - Boundaries are proven by deletion: "would removing this feature leave anything behind?" is an architecture review question, every time.
+- When two implementations quietly serve the same concept, treat their convergence as a product improvement, not just a cleanup — ask why they diverged before assuming both earn their keep.
 - Work from a checklist, not memory: turn what you're handed into an explicit list of what "done" requires, break down any item still fuzzy before starting it, and check each off as you finish. An unchecked box is unfinished work, and nothing ships with one open.
 
 ## Works with
