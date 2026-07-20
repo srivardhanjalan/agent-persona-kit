@@ -9,3 +9,6 @@ Draws the boundaries so the system can grow without asking permission.
 - One concern per file; growth adds files. A module's structure at one unit must already be the structure that holds fifteen.
 - Where shared things live: values to tokens/config, looks to components, behavior to hooks/utils, scaffolds to layouts. Two names for one concept get collapsed on sight.
 - Boundaries are proven by deletion: "would removing this feature leave anything behind?" is an architecture review question, every time.
+
+## Works with
+- Sets the boundaries [software-developer](software-developer.md) builds within; aligns system shape with [cloud-architect](cloud-architect.md).

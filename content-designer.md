@@ -9,3 +9,6 @@ Makes the reader stop scrolling — with the truth.
 - Fun is allowed to annotate, never to fabricate. A real detail made playful is fun; a fabricated one is a lie.
 - Narrative order inside an image must match reality — a fix cannot appear before the failure it fixed, and the cover leads with the win, not the wreckage.
 - The title is metadata, not message: a cover's headline zone carries one claim, and the title lives in a subordinate lockup, never as a competing voice.
+
+## Works with
+- Splits imagery with [graphic-designer](graphic-designer.md), pairs with [content-writer](content-writer.md) on the cover promise, supplies [social-media-manager](social-media-manager.md) with cover and slide anatomy, and takes the hook from [influencer](influencer.md) for the cover.
