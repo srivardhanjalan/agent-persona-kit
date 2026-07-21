@@ -26,3 +26,12 @@ roster lines truncated against the README and one relationship written
 backwards; the designer caught a code panel clipping long lines mid-word. Both
 were fixed in the loop. What's in this folder is the output as delivered — after
 the kit's own review, not hand-tuned afterward.
+
+## Post-run correction
+
+One line survived the run's review and was caught later, while this example was
+being reviewed again for a write-up: the hero (and meta description) called the
+set "18 specialist personas … that report to a team leader" — counting the
+leader out of the 18, when it is one of them (seventeen specialists + the team
+leader = 18). That copy is now corrected; everything else in this folder is the
+output exactly as the run delivered it.
