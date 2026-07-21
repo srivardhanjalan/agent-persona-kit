@@ -23,7 +23,7 @@ ran the review loop until it came back clean.
 
 The review caught real bugs before it shipped: the content writer flagged two
 roster lines truncated against the README and one relationship written
-backwards; the designer caught a code panel clipping long lines mid-word. Both
+backwards; the designers caught a code panel clipping long lines mid-word. Both
 were fixed in the loop. What's in this folder is the output as delivered — after
 the kit's own review, not hand-tuned afterward.
 
