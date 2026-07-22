@@ -94,11 +94,14 @@
   #s3 .cell .n{ font-weight:700; font-size:24px; line-height:1.15; }
   #s3 .loop{ display:flex; align-items:stretch; gap:20px; }
   #s3 .loop .arw{ display:flex; align-items:center; }
-  #s3 .rnd{ border:1px solid var(--hair); border-radius:16px; padding:20px 32px; text-align:center; }
+  /* the review-loop box is a matched neutral PAIR to the shipped box — same
+     border weight and text brightness, so green is the ONLY distinction that
+     reads (process step vs the win), not "faint box next to glowing box" */
+  #s3 .rnd{ border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:22px 32px; text-align:center; }
   #s3 .rnd .rn{ font-family:"JetBrains Mono"; font-weight:700; font-size:18px;
-    letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+    letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }
   #s3 .rnd .rs{ font-size:42px; font-weight:800; line-height:1; margin-top:8px; }
-  #s3 .rnd .loopglyph{ color:var(--muted); font-weight:700; }
+  #s3 .rnd .loopglyph{ color:var(--ink2); font-weight:700; }
   #s3 .arw{ color:var(--muted); font-size:32px; }
   #s3 .shipped{ display:flex; align-items:center; gap:16px; border:1px solid rgba(63,185,80,.55);
     border-radius:16px; padding:22px 44px; font-size:42px; font-weight:800; color:var(--pass); }
