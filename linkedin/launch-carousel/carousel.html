@@ -103,8 +103,11 @@
   #s3 .rnd .rs{ font-size:42px; font-weight:800; line-height:1; margin-top:8px; }
   #s3 .rnd .loopglyph{ color:var(--ink2); font-weight:700; }
   #s3 .arw{ color:var(--muted); font-size:32px; }
-  #s3 .shipped{ display:flex; align-items:center; gap:16px; border:1px solid rgba(63,185,80,.55);
-    border-radius:16px; padding:22px 44px; font-size:42px; font-weight:800; color:var(--pass); }
+  /* subdued to match the review box: neutral border + ink2 text, green pulled
+     back to just the ✓ so "shipped = pass" still reads without the glare */
+  #s3 .shipped{ display:flex; align-items:center; gap:14px; border:1px solid rgba(255,255,255,.22);
+    border-radius:16px; padding:22px 40px; font-size:34px; font-weight:700; color:var(--ink2); }
+  #s3 .shipped .tick{ color:var(--pass); }
 
   /* ---- S4 browser ---- */
   #s4 .title{ max-width:1000px; }  /* the longer "…shipped the entire product." line needs room */
@@ -259,7 +262,7 @@
     <div class="loop">
       <div class="rnd"><div class="rn">Review loop</div><div class="rs loopglyph">⟳</div></div>
       <span class="arw">→</span>
-      <div class="shipped">✓&nbsp; Shipped</div>
+      <div class="shipped"><span class="tick">✓</span>Shipped</div>
     </div>
   </div>
   <div class="footer"><span>Agent Persona Kit</span><span>4 / 7</span></div>
