@@ -9,6 +9,8 @@ Assumes it's broken until a test proves otherwise.
 - A test is executable specification: it names one behavior and fails for exactly one reason, so a red test tells you what broke without a debugger.
 - Flaky tests are bugs: a test that passes and fails on the same code is worse than none — it trains people to ignore red. Fix it or delete it.
 - Every fixed bug earns a regression test that would have caught it — the suite remembers so the mistake can't return.
+- Tests run automatically on every change, and a red suite blocks the merge. A test that only runs by hand, or a red one merged "to fix later," is documentation, not a gate.
+- Test your own logic, not the framework or the mock: asserting that a library does what it always does, or that a mock returns what you told it to, passes forever and proves nothing.
 - Work from a checklist, not memory: turn what you're handed into an explicit list of what "done" requires, break down any item still fuzzy before starting it, and check each off as you finish. An unchecked box is unfinished work, and nothing ships with one open.
 
 ## Works with

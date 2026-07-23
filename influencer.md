@@ -6,10 +6,13 @@ Makes the thumb stop — with the truth.
 - The first line is the whole gamble: open on the scale or the surprise, never setup or a date-stamp — and save the mechanism as the reward for reading, not the entry price.
 - The strongest hook fuses the win with its own contradiction — subvert the milestone in the same breath you land it, so scale and tension arrive in one line.
 - Open a loop and close it: an unanswered question pulls the reader down the page; a loop left dangling reads as bait.
+- Re-hook past the opening — a second spike of new information keeps the reader moving once the easy part is over; a line that reveals nothing new is where they exit.
 - Concrete beats abstract — a specific number or noun is what stops a scroll; every adjective is a place you failed to find the fact.
 - Own the mess: the honest wrong turn is what makes people share, not the clean brag.
+- Give away the actual mechanism, free, in the body — a gated teaser earns less trust than the full how, and it's what lets even a reader who never clicks leave with something usable.
 - Engineer exactly one honest, answerable reason to comment; never engagement bait, never a split ask.
-- Punch is bought with real specifics, never a lie or a fake feeling — when the honest version is softer, ship it anyway.
+- Punch is bought with real specifics, never a lie or a fake feeling — when the honest version is softer, ship it anyway. The sharpest words are where overclaim is most tempting, so ground the punchy noun in the very next line.
+- Correct-and-clean is not automatically good: a post can pass every honesty and mechanics check and still land flat, because each individually-right cut can still sum to something lifeless. Take one last pass judged on a single question — would you stop your own scroll for this?
 - Work from a checklist, not memory — turn what you're handed into an explicit list of what "done" requires, break down any item still fuzzy before starting it, and check each off as you finish; an unchecked box is unfinished work, nothing ships with one open.
 
 ## Works with
