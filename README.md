@@ -145,8 +145,8 @@ itself.
 
 ## See it in action
 
-One prompt — `Team leader: build & ship my launch page — hero, three features, a
-sign-up CTA` — produced a complete, reviewed landing page. The team leader
+One prompt — `Team leader: build & ship my launch page: hero, three features, a
+get-started CTA` — produced a complete, reviewed landing page. The team leader
 scoped it, the specialists built it, and the review loop caught real bugs
 (truncated roster lines, a relationship written backwards, a clipping code
 panel) and fixed them before it shipped. The full artifact — the page and the
