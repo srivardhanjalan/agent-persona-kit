@@ -98,10 +98,9 @@
   /* the review-loop box is a matched neutral PAIR to the shipped box — same
      border weight and text brightness, so green is the ONLY distinction that
      reads (process step vs the win), not "faint box next to glowing box" */
-  #s3 .rnd{ border:1px solid rgba(255,255,255,.22); border-radius:16px; padding:22px 32px; text-align:center; }
-  #s3 .rnd .rn{ font-family:"JetBrains Mono"; font-weight:700; font-size:20px;
-    letter-spacing:.1em; text-transform:uppercase; color:var(--ink2); }
-  #s3 .rnd .rs{ font-size:34px; font-weight:800; line-height:1; margin-top:8px; }
+  /* mirrors #s3 .shipped exactly (inline glyph + label) so the pair is parallel */
+  #s3 .rnd{ display:flex; align-items:center; gap:14px; border:1px solid rgba(255,255,255,.22);
+    border-radius:16px; padding:22px 40px; font-size:34px; font-weight:700; color:var(--ink2); }
   #s3 .rnd .loopglyph{ color:var(--ink2); font-weight:700; }
   #s3 .arw{ color:var(--muted); font-size:32px; }
   /* subdued to match the review box: neutral border + ink2 text, green pulled
@@ -261,7 +260,7 @@
     <div class="flow tight">↔ They consult as they go ↔</div>
     <div class="flow">Reviewed until clean ↓</div>
     <div class="loop">
-      <div class="rnd"><div class="rn">Review loop</div><div class="rs loopglyph">⟳</div></div>
+      <div class="rnd"><span class="loopglyph">⟳</span>Review loop</div>
       <span class="arw">→</span>
       <div class="shipped"><span class="tick">✓</span>Shipped</div>
     </div>
