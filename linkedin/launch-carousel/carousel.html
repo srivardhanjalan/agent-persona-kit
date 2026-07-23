@@ -60,11 +60,14 @@
   /* ---- S2 terminal ---- */
   #s2 .title{ max-width:none; white-space:nowrap; }
   #s2 .def{ position:absolute; left:84px; top:388px; max-width:868px; color:var(--ink2); }
-  #s2 .card{ position:absolute; left:84px; top:720px; width:912px; font-size:36px; line-height:1.42;
-    background:var(--term); border:1px solid var(--hair); border-radius:20px; padding:60px 52px; }
-  #s2 .card .cmd{ color:var(--ink); }
-  #s2 .card .caret{ color:var(--muted); margin-right:16px; }
-  #s2 .under{ position:absolute; left:84px; top:1020px; }
+  #s2 .card{ position:absolute; left:84px; top:690px; width:912px;
+    background:var(--term); border:1px solid var(--hair); border-radius:20px; overflow:hidden; }
+  #s2 .termbar{ background:#161B26; padding:0 22px; height:56px; display:flex; align-items:center; gap:11px; border-bottom:1px solid var(--hair); }
+  #s2 .termbar .d{ width:12px; height:12px; border-radius:50%; background:#2A3446; flex:none; }
+  #s2 .termbar .u{ margin-left:18px; font-family:"JetBrains Mono"; font-weight:500; font-size:20px; color:var(--muted); }
+  #s2 .cmd{ font-family:"JetBrains Mono"; font-weight:500; font-size:36px; line-height:1.42; color:var(--ink); padding:56px 52px; }
+  #s2 .cmd .caret{ color:var(--muted); margin-right:16px; }
+  #s2 .under{ position:absolute; left:84px; top:1050px; }
 
   /* ---- S3 diagram ---- */
   #s3 .title{ max-width:1020px; }
@@ -227,8 +230,9 @@
   <div class="kicker">THE JOB</div>
   <div class="title h2">This is <span class="accent">everything</span><br>I typed.</div>
   <div class="def body">Point Claude Code, Cursor, or any agent at the <span style="white-space:nowrap">agent-persona-kit</span> folder. Then hand the team leader the whole job:</div>
-  <div class="card term">
-    <span class="caret">&gt;</span><span class="cmd">Team leader: build &amp; ship my launch page — hero, three features, a <span style="white-space:nowrap">sign-up CTA.</span></span>
+  <div class="card">
+    <div class="termbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="u">claude code</span></div>
+    <div class="cmd"><span class="caret">&gt;</span>Team leader: build &amp; ship my launch page — hero, three features, a <span style="white-space:nowrap">sign-up CTA.</span></div>
   </div>
   <div class="under micro">Then I let the team run it ↓</div>
   <div class="footer"><span>Agent Persona Kit</span><span>3 / 7</span></div>
