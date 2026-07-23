@@ -85,12 +85,14 @@
   #s3 .node .nm{ font-weight:700; font-size:40px; letter-spacing:-.01em; }
   #s3 .node .sb{ font-family:"JetBrains Mono"; font-weight:500; font-size:20px;
     letter-spacing:.06em; color:var(--muted); margin-top:4px; }
-  #s3 .crew{ display:flex; gap:0; align-self:stretch; }
-  #s3 .cell{ flex:1; padding:20px 12px; }
-  #s3 .cell:first-child{ padding-left:2px; }  /* first crew dot on the leader dot's axis */
-  #s3 .cell + .cell{ border-left:1px solid var(--hair); }
-  #s3 .cell .dot{ width:16px; height:16px; border-radius:50%; margin-bottom:16px; }
-  #s3 .cell .n{ font-weight:700; font-size:26px; line-height:1.15; }
+  /* the crew is the six the leader pulled — a 2-col dot+name list, no vertical
+     dividers (table chrome that encoded nothing), mirroring the roster slide's
+     grid so the deck reads as one system; one-line names, no squeezed wraps */
+  #s3 .crew{ align-self:stretch; display:grid; grid-template-columns:1fr 1fr;
+    column-gap:40px; row-gap:34px; }
+  #s3 .cell{ display:flex; align-items:center; gap:16px; padding-left:2px; }
+  #s3 .cell .dot{ width:16px; height:16px; border-radius:50%; flex:none; }
+  #s3 .cell .n{ font-weight:700; font-size:26px; line-height:1.15; white-space:nowrap; }
   #s3 .loop{ display:flex; align-items:stretch; gap:20px; }
   #s3 .loop .arw{ display:flex; align-items:center; }
   /* the review-loop box is a matched neutral PAIR to the shipped box — same
@@ -243,19 +245,18 @@
   <div class="kicker">HOW IT RUNS</div>
   <div class="title h2">One job in.<br><span class="accent">Six specialists</span> on it.</div>
   <div class="diagram">
-    <div class="flow">Takes the whole job ↓</div>
     <div class="node">
       <span class="dot" style="background:var(--lead)"></span>
       <div><div class="nm">Team Leader</div><div class="sb">breaks the job down · picks the crew · loops the review</div></div>
     </div>
-    <div class="flow">Pulls the six this job needs — of the 18 ↓</div>
+    <div class="flow">Pulls the six this job needs · of 18 ↓</div>
     <div class="crew">
-      <div class="cell"><div class="dot" style="background:var(--prod)"></div><div class="n">Product<br>Manager</div></div>
-      <div class="cell"><div class="dot" style="background:var(--write)"></div><div class="n">Content<br>Writer</div></div>
-      <div class="cell"><div class="dot" style="background:var(--design)"></div><div class="n">Product<br>Designer</div></div>
-      <div class="cell"><div class="dot" style="background:var(--design)"></div><div class="n">Graphic<br>Designer</div></div>
-      <div class="cell"><div class="dot" style="background:var(--eng)"></div><div class="n">Software<br>Developer</div></div>
-      <div class="cell"><div class="dot" style="background:var(--infra)"></div><div class="n">Security<br>Engineer</div></div>
+      <div class="cell"><span class="dot" style="background:var(--prod)"></span><span class="n">Product Manager</span></div>
+      <div class="cell"><span class="dot" style="background:var(--write)"></span><span class="n">Content Writer</span></div>
+      <div class="cell"><span class="dot" style="background:var(--design)"></span><span class="n">Product Designer</span></div>
+      <div class="cell"><span class="dot" style="background:var(--design)"></span><span class="n">Graphic Designer</span></div>
+      <div class="cell"><span class="dot" style="background:var(--eng)"></span><span class="n">Software Developer</span></div>
+      <div class="cell"><span class="dot" style="background:var(--infra)"></span><span class="n">Security Engineer</span></div>
     </div>
     <div class="flow tight">↔ They consult as they go ↔</div>
     <div class="flow">Reviewed until clean ↓</div>
