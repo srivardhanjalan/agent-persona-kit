@@ -3,7 +3,7 @@
 This folder is a **real artifact, not a mockup.** Everything here was produced by
 the kit's own personas, orchestrated by the team leader, from a single prompt:
 
-> `> Team leader: build & ship my launch page — hero, three features, a sign-up CTA.`
+> `> Team leader: build & ship my launch page: hero, three features, a get-started CTA.`
 
 ## What's here
 
